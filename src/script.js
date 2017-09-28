@@ -1,8 +1,5 @@
 import configFile from '../config.json';
 import backgroundWatermark from './backgroundWatermark';
-import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
-import '@okta/okta-signin-widget/dist/css/okta-theme.css';
-import OktaSignIn from '@okta/okta-signin-widget';
 
 
 backgroundWatermark(configFile.watermark_text);

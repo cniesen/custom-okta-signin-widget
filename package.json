@@ -37,7 +37,5 @@
     "webpack-merge": "^4.1.0",
     "webpack-remove-debug": "^0.1.0"
   },
-  "dependencies": {
-    "@okta/okta-signin-widget": "^2.1.0"
-  }
+  "dependencies": {}
 }
