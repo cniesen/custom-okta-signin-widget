@@ -1,0 +1,17 @@
+{
+  "watermark_text": "develop",
+  "OktaSignInWidget": {
+    "baseUrl": "https://dev-######.oktapreview.com",
+    "logo": "logo.png",
+    "features": {
+      "router": true,
+      "rememberMe": false,
+      "autoPush": true,
+      "smsRecovery": true,
+      "callRecovery": true,
+      "selfServiceUnlock": true,
+      "multiOptionalFactorEnroll": true,
+      "securityImage": false
+    }
+  }
+}
