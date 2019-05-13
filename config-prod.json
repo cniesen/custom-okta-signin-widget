@@ -1,7 +1,6 @@
 {
-  "watermark_text": "develop",
   "OktaSignInWidget": {
-    "baseUrl": "https://dev-680189.oktapreview.com",
+    "baseUrl": "https://######.okta.com",
     "logo": "logo.png",
     "features": {
       "router": true,

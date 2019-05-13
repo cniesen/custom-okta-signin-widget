@@ -16,7 +16,7 @@ Development (local)
     npm install
     ```
 
-3. Update the `config.json` configuration file.
+3. Update the `config-dev.json` and `config-prod.json` configuration file.
 
 4. Start webpack development server
 
@@ -24,15 +24,21 @@ Development (local)
     npm start
     ```
 
-4. Point browser to http://localhost:3000
+5. Point browser to http://localhost:3000
 
 
 Gradle
 ------
 The npm tasks can be started via gradle.  The benefit is that node/npm doesn't need to be installed.  The cost is a longer build time.
 
-- `gradle start` Deploys local development server and listens on http://localhost:3000.
-- `gradle buildDist` Builds the production deployment.
+Environment | Config File      | Gradle Build Command | Node Build Command
+------------|------------------|----------------------|-------------------
+Production  | config-prod.json | gradlew buildProd    | npm run build-prod
+Development | config-dev.json  | gradlew buildDev     | npm run build-dev
+
+The gradle tasks downloads and installs node and executes the corresponding npm task.  The npm build copies the environment
+specific config file to `config.json` before the build. After the build all files needed for the deploy are found in the
+`dist/` directory.
 
 Known Issues
 ------------
