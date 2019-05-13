@@ -23,6 +23,12 @@ module.exports = {
                     limit: 10000,
                 },
             },
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                }
+            }
         ],
     },
     resolve: {
