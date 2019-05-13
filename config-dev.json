@@ -1,5 +1,5 @@
 {
-  "watermark_text": "develop",
+  "watermarkText": "develop",
   "OktaSignInWidget": {
     "baseUrl": "https://dev-######.oktapreview.com",
     "logo": "logo.png",

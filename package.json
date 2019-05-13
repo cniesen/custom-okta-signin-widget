@@ -5,8 +5,9 @@
   "main": "src/script.js",
   "repository": "git@git.its.iastate.edu:scm/okta/iastate-login.git",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p && ncp src/static/ dist/ --filter=.*",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "build-dev": "ncp config-dev.json config.json && cross-env NODE_ENV=production webpack && ncp src/static/ dist/ --filter=.*",
+    "build-prod": "ncp config-prod.json config.json && cross-env NODE_ENV=production webpack && ncp src/static/ dist/ --filter=.*",
+    "start": "ncp config-dev.json config.json && node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "author": "Claus Niesen",
   "license": "UNLICENSED",

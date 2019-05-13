@@ -1,0 +1,16 @@
+{
+  "OktaSignInWidget": {
+    "baseUrl": "https://######.okta.com",
+    "logo": "logo.png",
+    "features": {
+      "router": true,
+      "rememberMe": false,
+      "autoPush": true,
+      "smsRecovery": true,
+      "callRecovery": true,
+      "selfServiceUnlock": true,
+      "multiOptionalFactorEnroll": true,
+      "securityImage": false
+    }
+  }
+}

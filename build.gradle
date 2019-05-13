@@ -17,9 +17,17 @@ task start(type: NpmTask) {
 
 start.dependsOn(npm_install)
 
-task buildDist(type: NpmTask) {
-    description = "Build deployment files for the Okta production environment.  Uses config.json configuration and places build into dist/ directory."
-    args = ['run', 'build']
+task buildDev(type: NpmTask) {
+    description = "Build deployment files for the Okta development environment.  Uses config-dev.json configuration and places build into dist/ directory."
+    args = ['run', 'build-dev']
 }
 
-buildDist.dependsOn(npm_install)
+buildDev.dependsOn(npm_install)
+
+task buildProd(type: NpmTask) {
+    description = "Build deployment files for the Okta production environment.  Uses config-prod.json configuration and places build into dist/ directory."
+    args = ['run', 'build-prod']
+}
+
+buildProd.dependsOn(npm_install)
+
