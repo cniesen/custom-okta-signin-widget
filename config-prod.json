@@ -10,7 +10,8 @@
       "callRecovery": true,
       "selfServiceUnlock": true,
       "multiOptionalFactorEnroll": true,
-      "securityImage": false
+      "securityImage": false,
+      "webauthn": true
     }
   }
 }
