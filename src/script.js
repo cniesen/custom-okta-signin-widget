@@ -1,35 +1,32 @@
 import configFile from '../config.json';
+import getRedirectUrl from './getRedirectUrl';
 import backgroundWatermark from './backgroundWatermark';
 
+// ### The OktaSignIn module doesn't work properly so we use CDN.
+// import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
+// import '@okta/okta-signin-widget/dist/css/okta-theme.css';
+// import OktaSignIn from '@okta/okta-signin-widget';
 
-backgroundWatermark(configFile.watermark_text);
+// Capture the redirect URL first thing as the sign-in page is loaded.
+// This will tell us where to go after sign-in.
+const redirect_url = getRedirectUrl();
 
-var config = {
-    ...configFile.OktaSignInWidget,
-    processCreds: function (creds, callback) {
-        console.info("Executing OktaSignIn.processCreds", {...creds, password: "*****"});
-        callback();
+backgroundWatermark(configFile.watermarkText);
+
+var oktaSignIn = new OktaSignIn(configFile.OktaSignInWidget);
+oktaSignIn.session.exists(function (exists) {
+
+    // Session found...
+    if (exists) {
+        window.location = redirect_url;
+    } else {
+        oktaSignIn.renderEl(
+            {el: '#okta-login-container'},
+            function success(res) {
+                if (res.status === 'SUCCESS') {
+                    res.session.setCookieAndRedirect(redirect_url);
+                }
+            }
+        );
     }
-};
-
-var oktaSignIn = new OktaSignIn(config);
-
-oktaSignIn.renderEl(
-  {el: '#okta-login-container'},
-
-  function success(res) {
-    console.info("success:", res);
-    return;
-
-  },
-
-  function error(err) {
-    // The widget will handle most types of errors - for example, if the user
-    // enters an invalid password or there are issues authenticating.
-    //
-    // This function is invoked with errors the widget cannot recover from:
-    // 1. Known errors: CONFIG_ERROR, UNSUPPORTED_BROWSER_ERROR, OAUTH_ERROR
-    // 2. Uncaught exceptions
-    throw Error(err);
-  }
-);
+});
