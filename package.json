@@ -28,6 +28,7 @@
     "webpack-hot-middleware": "^2.24.4"
   },
   "dependencies": {
-    "@okta/okta-signin-widget": "^2.19.0"
+    "@okta/okta-signin-widget": "^2.19.0",
+    "query-string": "^6.5.0"
   }
 }

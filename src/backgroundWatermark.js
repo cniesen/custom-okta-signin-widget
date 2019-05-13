@@ -1,3 +1,9 @@
+/**
+ * This method adds the text diagonally to the background (as a watermark).
+ * It's used to distinguish develop, preview, etc. environments from production.
+ *
+ * @param text to be displayed as a watermark
+ */
 export default function backgroundWatermark(text) {
     if (text) {
         let base64Text = btoa('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><text font-size="30" fill-opacity="0.50" fill="gray" text-anchor="middle" transform="translate(100,100)rotate(-45)">' + text + '</text></svg>');
