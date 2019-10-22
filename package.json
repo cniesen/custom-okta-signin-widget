@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Customized Okta Sign-in Widget",
   "main": "src/script.js",
-  "repository": "git@git.its.iastate.edu:scm/okta/iastate-login.git",
+  "repository": "https://github.com/cniesen/custom-okta-signin-widget",
   "scripts": {
     "build-dev": "ncp config-dev.json config.json && cross-env NODE_ENV=production webpack && ncp src/static/ dist/ --filter=.*",
     "build-prod": "ncp config-prod.json config.json && cross-env NODE_ENV=production webpack && ncp src/static/ dist/ --filter=.*",
@@ -13,23 +13,22 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.6",
-    "cross-env": "^5.2.0",
-    "css-loader": "^2.1.1",
-    "file-loader": "^3.0.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
     "ncp": "^2.0.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-middleware": "^3.6.2",
-    "webpack-dev-server": "^3.3.1",
-    "webpack-hot-middleware": "^2.24.4"
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
-    "@okta/okta-signin-widget": "^2.19.0",
-    "query-string": "^6.5.0"
+    "query-string": "^6.8.3"
   }
 }

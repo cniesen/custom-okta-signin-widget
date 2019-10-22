@@ -46,6 +46,5 @@ Known Issues
 * The okta-signin-widget uses an outdated jQuery version with the CVE-2015-9251 security alert.  Okta is aware of this 
   but has not fixed the issue so far. https://github.com/okta/okta-signin-widget/issues/378 (The default Okta login page
   also the old version of jQuery.)
-
-* bundle.js is large with 1.3 MB.  The size is due to the Okta dependency (their code is huge).  Okta's CDN file isn't any
-  smaller.  Even the default Okta login page includes a 1.5 MB js file.
+  
+* Okta's CDN file is large with 1 MB. Even the default Okta login page includes a 1.5 MB js file.  

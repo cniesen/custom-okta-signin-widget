@@ -1,12 +1,12 @@
 {
   "watermarkText": "develop",
   "OktaSignInWidget": {
-    "baseUrl": "https://dev-######.oktapreview.com",
+    "baseUrl": "https://dev-680189.oktapreview.com",
     "logo": "logo.png",
     "brandName": "Sample Inc.",
     "helpSupportNumber": "(800) 219-0964",
     "features": {
-      "router": false,
+      "router": true,
       "rememberMe": false,
       "autoPush": true,
       "smsRecovery": true,
